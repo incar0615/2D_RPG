@@ -1,0 +1,21 @@
+﻿Assembly-CSharp-Editor-vs.csproj
+Assembly-CSharp-Editor.csproj
+Assembly-CSharp-vs.csproj
+Assembly-CSharp.csproj
+2D RPG-csharp.sln
+2D RPG.sln
+Assembly-CSharp-firstpass-vs.csproj
+Assembly-CSharp-firstpass.csproj
+.vs
+
+# UNITY #
+Library
+obj
+Temp
+AssetBundles
+
+#etc#
+launch.json
+Assembly-CSharp-Editor-firstpass.csproj
+TileFluid.csproj
+TileFluid.Editor.csproj
