@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour {
 
     public Text[] playerCharacterInfos;
+    public Text targetEnemyInfo;
 
     private static UIManager instance = null;
     public static UIManager Instance
@@ -48,5 +49,15 @@ public class UIManager : MonoBehaviour {
 
             cnt++;
         }
+    }
+
+    public void UpdateTargetEnemyInfo(EnemyCharacter enemyChar)
+    {
+        string text =
+                "TargetEnemy Info"+
+                "\n\nname = " + enemyChar.EnemyData.name +
+                "\nhp = " + enemyChar.EnemyData.curHp + "/" + enemyChar.EnemyData.maxHp;
+
+        targetEnemyInfo.text = text;
     }
 }

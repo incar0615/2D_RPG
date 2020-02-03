@@ -49,6 +49,7 @@ public class PartyManager : MonoBehaviour {
             if (hit)
             {
                 //playerPartyList.Find(c => c.PlayerData.name == "char1").Hit(2);
+                
                 MoveParty(mousePos);
             }
         }
@@ -74,7 +75,7 @@ public class PartyManager : MonoBehaviour {
                 curHp = 10,
                 atk = 1,
                 atkSpeed = 1,
-                atkRange = 3,
+                atkRange = 2.0f,
                 def = 0,
                 name = "char" + (i + 1).ToString()
             };
@@ -87,6 +88,7 @@ public class PartyManager : MonoBehaviour {
 
     void MoveParty(Vector3 targetPos)
     {
+        BattleManager.Instance.targetEnemy = null;
         //Transform mainCharTr = playerPartyList.Find(c => c.isMainCharacter).transform;
         foreach (PlayerCharacter pc in playerPartyList)
         {
@@ -98,6 +100,14 @@ public class PartyManager : MonoBehaviour {
             {
                 pc.SetFollowTarget(mainChar.transform);
             }
+        }
+    }
+
+    public void ChangePartyState(Character.CharacterState state)
+    {
+        foreach (PlayerCharacter pc in playerPartyList)
+        {
+            pc.State = state;
         }
     }
 

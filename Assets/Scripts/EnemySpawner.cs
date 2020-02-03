@@ -30,13 +30,13 @@ public class EnemySpawner : MonoBehaviour {
 
         EnemyCharacterData newEnemyData = new EnemyCharacterData
         {
-            maxHp = 10,
-            curHp = 10,
-            atk = 1,
-            atkSpeed = 1,
-            atkRange = 2,
+            maxHp = 15,
+            curHp = 15,
+            atk = 2,
+            atkSpeed = 1.5f,
+            atkRange = 0.5f,
             def = 0,
-            name = "enemy1"
+            name = "enemy_cat1"
         };
 
         ecScript.EnemyData = newEnemyData;
@@ -48,8 +48,8 @@ public class EnemySpawner : MonoBehaviour {
     {
         while(true)
         {
-            yield return new WaitForSeconds(5);
             SpawnEnemy();
+            yield return new WaitForSeconds(5);
         }
     }
 }

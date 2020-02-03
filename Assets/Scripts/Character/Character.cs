@@ -13,11 +13,13 @@ public abstract class Character : MonoBehaviour {
         BATTLE
     }
 
+    protected double atkCooldown;
     public CharacterState State { get; set; }
     
     // Use this for initialization
     void Start()
     {
+        atkCooldown = 0;
     }
 
     // Update is called once per frame
@@ -29,7 +31,7 @@ public abstract class Character : MonoBehaviour {
     public abstract void Hit(double dmg);
     public abstract void Die();
 
-    public void Move(Vector3 targetPos)
+    public virtual void Move(Vector3 targetPos)
     {
         Vector3 deflection = targetPos - transform.position;
         if (deflection.magnitude < 0.1)
