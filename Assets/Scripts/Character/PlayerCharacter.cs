@@ -29,7 +29,7 @@ public class PlayerCharacter : Character
                 break;
 
             case CharacterState.FOLLOW:
-                Follow();
+                Follow(); // 인자값은 넘기지 않고 무조건 MainCharacter 를 추적
                 break;
 
             case CharacterState.BATTLE:
@@ -121,7 +121,8 @@ public class PlayerCharacter : Character
         if (deflection.magnitude < 0.1)
         {
             State = CharacterState.IDLE;
-            BattleManager.Instance.DetectAround();
+            // 이동이 끝나면 주변의 적을 탐지해서 자동 공격
+            BattleManager.Instance.DetectAround(); 
         }
         else
         {
@@ -141,6 +142,7 @@ public class PlayerCharacter : Character
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        // 전투 중이 아닐때는 일정거리 이상 붙지 않도록 밀어냄
         if(col.tag == "Unit" && !isMainCharacter && State != CharacterState.BATTLE)
         {
             Vector3 deflection = transform.position - col.transform.position;
@@ -152,6 +154,7 @@ public class PlayerCharacter : Character
     }
     void OnTriggerStay2D(Collider2D col)
     {
+        // 전투 중이 아닐때는 일정거리 이상 붙지 않도록 밀어냄
         if (col.tag == "Unit" && !isMainCharacter && State != CharacterState.BATTLE)
         {
             Vector3 deflection = transform.position - col.transform.position;

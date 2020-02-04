@@ -39,10 +39,12 @@ public class BattleManager : MonoBehaviour {
 	void Update () {
     }
 
+    
     public void BattleEnd()
     {
         PartyManager.Instance.ChangePartyState(Character.CharacterState.IDLE);
         targetEnemy = null;
+        // 전투 후 주변을 재 탐색
         DetectAround();
     }
     public void DetectAround()

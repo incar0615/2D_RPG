@@ -13,7 +13,8 @@ public abstract class Character : MonoBehaviour {
         BATTLE
     }
 
-    protected double atkCooldown;
+    protected double atkCooldown; // 공격 대기 시간
+
     public CharacterState State { get; set; }
     
     // Use this for initialization
@@ -33,6 +34,7 @@ public abstract class Character : MonoBehaviour {
 
     public virtual void Move(Vector3 targetPos)
     {
+        // 목표 지점에 가까워지면 대기 상태로 변경
         Vector3 deflection = targetPos - transform.position;
         if (deflection.magnitude < 0.1)
         {

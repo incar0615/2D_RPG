@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour {
 
     public GameObject enemyPrefap;
-   
+    public float spawnTime = 5.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -49,7 +49,7 @@ public class EnemySpawner : MonoBehaviour {
         while(true)
         {
             SpawnEnemy();
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(spawnTime);
         }
     }
 }

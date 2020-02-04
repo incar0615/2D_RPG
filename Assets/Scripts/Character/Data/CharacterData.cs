@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CharacterData
 {
-    public double maxHp;
-    public double curHp;
-    public double atk;
+    public double maxHp; 
+    public double curHp; 
+    public double atk; 
     public double def;
     public double atkSpeed;
     public double atkRange;

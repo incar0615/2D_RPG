@@ -63,6 +63,7 @@ public class EnemyCharacter : Character
         atkCooldown = EnemyData.atkSpeed;
     }
 
+    // 피격
     public override void Hit(double dmg)
     {
         EnemyData.curHp -= (dmg - EnemyData.def);
@@ -101,6 +102,7 @@ public class EnemyCharacter : Character
         DetectClosestPlayerChar();
     }
 
+    // 가장 가까운 플레이어 캐릭터를 타겟으로 설정
     public void DetectClosestPlayerChar()
     {
         float minDist = 10000.0f;
