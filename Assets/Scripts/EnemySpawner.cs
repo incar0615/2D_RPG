@@ -23,7 +23,7 @@ public class EnemySpawner : MonoBehaviour {
     {
         Debug.Log("spawnEnemy");
         
-        GameObject go = Instantiate<GameObject>(enemyPrefap, transform.position + Vector3.right * Random.Range(-4.0f, 4.0f) + Vector3.up * Random.Range(-4.0f, 4.0f), Quaternion.identity);
+        GameObject go = Instantiate<GameObject>(enemyPrefap, transform.position + Vector3.right * Random.Range(-4.0f, 4.0f) + Vector3.up * Random.Range(-4.0f, 4.0f), Quaternion.identity, transform);
         go.name = "enemy";
 
         EnemyCharacter ecScript = go.GetComponent<EnemyCharacter>();
